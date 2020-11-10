@@ -33,13 +33,18 @@ ol, ul {
 }
 
 .square:focus {
-    outline: none
+    outline: none;
 }
 
-.kbd-navigation .square:focus {
+kbd-navigation .square:focus {
     background: #ddd;
 }
 
-.game-info {
+.game {
+    display: flex;
+    flex-direction: row;
+}
+
+.game-info{
     margin-left: 20px;
 }
