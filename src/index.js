@@ -2,17 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
-    render() {
-        return (
-            <button 
-                className="square" 
-                onClick={() => {this.props.onClick()}}
-            >
-                {this.props.value}
-            </button>
-        );
-    }
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick()}>
+            {props.value}
+        </button>
+    );
 }
 
 class Board extends React.Component {
@@ -24,9 +19,9 @@ class Board extends React.Component {
     }
 
     handleClick(i) {
-        const squares = this.state.squares.slice();
-        squares[i] = 'X';
-        this.setState({squares: squares});
+        const squares = this.state.squares.slice(); // Make a copy of the array holding the state
+        squares[i] = 'X';                           // Modify
+        this.setState({squares: squares});          // Point to the modified array
     }
 
     renderSquare(i) {
